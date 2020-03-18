@@ -77,8 +77,18 @@ p {
 }
 </style>
 </head>
-
-<body>
+ <script language=Javascript>
+    function time() {
+        //获得显示时间的div
+        t_div = document.getElementById('showtime');
+        var now = new Date()
+            //替换div内容 
+        t_div.innerHTML =   now.getFullYear() + " " + (now.getMonth() + 1) + " " + now.getDate() + " " + now.getHours() + " " + now.getMinutes() + " " + now.getSeconds();
+        //等待一秒钟后调用time方法，由于settimeout在time方法内，所以可以无限调用
+        setTimeout(time, 1000);
+    }
+    </script>
+<body onload="time()">
 
 <div class="heart">
 	<div class='topLeft'></div>
@@ -92,20 +102,7 @@ p {
 <br>
 <br>
 <br>	
-<script>
- 	    function getDate(){
-                //获取当前时间
-                var date = new Date();
-                //格式化为本地时间格式
-                var date1 = date.toLocaleString();
-                //获取div
-                var div1 = document.getElementById("times");
-                //将时间写入div
-                div1.innerHTML = date1;
-            }
-            //使用定时器每秒向div写入当前时间
-            setInterval("getDate()",1000);
-</script>
+	<p><div id="showtime"></div></p>
 </body>
 </html>
 

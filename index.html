@@ -77,17 +77,7 @@ p {
 }
 </style>
 </head>
- <script language=Javascript>
-    function time() {
-        //获得显示时间的div
-        t_div = document.getElementById('showtime');
-        var now = new Date()
-            //替换div内容 
-        t_div.innerHTML =   now.getFullYear() + " " + (now.getMonth() + 1) + " " + now.getDate() + " " + now.getHours() + " " + now.getMinutes() + " " + now.getSeconds();
-        //等待一秒钟后调用time方法，由于settimeout在time方法内，所以可以无限调用
-        setTimeout(time, 1000);
-    }
-    </script>
+
 <body onload="time()">
 
 <div class="heart">
@@ -102,7 +92,7 @@ p {
 <br>
 <br>
 <br>	
-	<p><div id="showtime"></div></p>
+	
 </body>
 </html>
 
